@@ -1,0 +1,14 @@
+# Exercício 1: Equações de segundo grau.
+
+a = int(input("Informe o parâmetro a da equação: "))
+b = int(input("Informe o parâmetro b da equação: "))
+c = int(input("Informe o parâmetro c da equação: "))
+import math
+print("A primeira raiz da equação é",(-b+math.sqrt(b*b-4*a*c))/(2*a))
+print("A segunda raiz da equação é",(-b-math.sqrt(b*b-4*a*c))/(2*a))
+
+# Exercício 2: Anos bissextos.
+
+ano = int(input("Informe o ano: "))
+bissexto = (ano % 4 == 0) and (ano % 100 != 0 or ano % 400 == 0)
+print(bissexto)
