@@ -1,0 +1,58 @@
+"""
+
+Programação Estruturada
+Entrega da AC2
+Exercício 1:
+
+"""
+
+def eq_seg_grau(a, b, c):
+    delta = b**2 - 4*a*c
+    
+    if delta < 0:
+        return None, None
+    else:
+        x1 = (-b + (delta ** 0.5)) / (2*a)
+        x2 = (-b - (delta ** 0.5)) / (2*a)
+        return x1, x2
+
+def bissexto(ano):
+    if ano % 400 == 0:
+        return True
+    elif ano % 100 == 0:
+        return False
+    elif ano % 4 == 0:
+        return True
+    else:
+        return False
+
+# Exemplo de uso das funções:
+print("Raízes da equação de segundo grau x^2 + 4x + 4 = 0:")
+print(eq_seg_grau(1, 4, 4))
+
+# Exemplo de uso dos anos bissextos:
+print("O ano 2000 é bissexto?")
+print(bissexto(2000))
+
+""" 
+
+AC2
+Exercício 2:
+
+"""
+
+def calcula_salario(valor_hora, num_horas, irpf=0.275):
+
+    salario_bruto = valor_hora * num_horas
+    
+    imposto_renda = salario_bruto * irpf
+    
+    salario_liquido = salario_bruto - imposto_renda
+    
+    return salario_liquido
+
+# Exemplo de calculo do salario:
+valor_por_hora = 30
+horas_trabalhadas = 200
+salario = calcula_salario(valor_por_hora, horas_trabalhadas)
+print("Salário líquido:", salario)
